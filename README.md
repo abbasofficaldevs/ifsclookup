@@ -1,4 +1,4 @@
-# 🌈 IFSCLOOKUP 🌈
+# IFSCLOOKUP
 
 <div align="center">
 

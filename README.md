@@ -4,7 +4,7 @@
 
 # 🏦 ifsclookup
 
-### ✨  Python package to fetch Indian bank IFSC details instantly ✨
+### ✨ simple Python package to fetch Indian bank IFSC details instantly ✨
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge\&logo=python)
 ![PyPI](https://img.shields.io/badge/PyPI-Live-orange?style=for-the-badge\&logo=pypi)

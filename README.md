@@ -1,6 +1,6 @@
 # ifsclookup
 
-Simple Python package to fetch Indian bank IFSC details.
+Python package to fetch Indian bank IFSC details.
 
 ## Installation
 

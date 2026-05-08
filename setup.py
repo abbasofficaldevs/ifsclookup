@@ -11,6 +11,7 @@ setup(
     description="Simple Python package for Indian IFSC lookup",
     long_description=long_description,
     long_description_content_type="text/markdown",
+    url="https://github.com/abbasofficaldevs/ifsclookup",
     packages=find_packages(),
     include_package_data=True,
     install_requires=[

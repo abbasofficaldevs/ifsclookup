@@ -1,35 +1,49 @@
 import requests
 
-API_URL = "https://ifsc.razorpay.com/{ifsc}"
+API_URL = "https://ifsc.razorpay.com/{}"
 
 
 def get_ifsc(ifsc_code: str) -> dict:
     """
-    Fetch IFSC details from Razorpay IFSC API.
+    Fetch IFSC details.
 
     Args:
-        ifsc_code (str): Valid IFSC code
+        ifsc_code (str): Bank IFSC code
 
     Returns:
-        dict: Bank information or error message
+        dict: Bank details or error
     """
 
-    if not ifsc_code or not isinstance(ifsc_code, str):
-        return {"error": "Invalid IFSC code"}
+    if not isinstance(ifsc_code, str) or not ifsc_code.strip():
+        return {
+            "success": False,
+            "error": "Invalid IFSC code"
+        }
+
+    ifsc_code = ifsc_code.strip().upper()
 
     try:
         response = requests.get(
-            API_URL.format(ifsc=ifsc_code.strip().upper()),
+            API_URL.format(ifsc_code),
             timeout=10
         )
 
         if response.status_code == 200:
-            return response.json()
+            data = response.json()
+
+            return {
+                "success": True,
+                "data": data
+            }
 
         return {
+            "success": False,
             "error": "IFSC not found",
             "status_code": response.status_code
         }
 
-    except requests.RequestException as exc:
-        return {"error": str(exc)}
+    except requests.RequestException as e:
+        return {
+            "success": False,
+            "error": str(e)
+        }

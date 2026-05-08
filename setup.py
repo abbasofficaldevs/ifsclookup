@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="ifsclookup",
-    version="1.0.2",
+    version="1.0.1",
     author="abbas",
     author_email="abbasofficialdevs@gmail.com",
     description="Simple Python package for Indian IFSC lookup",
